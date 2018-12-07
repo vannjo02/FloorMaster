@@ -1,0 +1,30 @@
+{
+  "OrderID": 3,
+  "date": "2018-12-05",
+  "customerName": "test3",
+  "state": "MI",
+  "taxRate": 5.75,
+  "productType": "Laminate",
+  "area": 2.5,
+  "costPerSqFt": 1.75,
+  "materialCost": 4.38,
+  "laborCostPerSqFt": 2.10,
+  "laborCost": 5.25,
+  "tax": 0.55,
+  "total": 10.18
+}
+{
+  "OrderID": 4,
+  "date": "2018-12-05",
+  "customerName": "test4",
+  "state": "IN",
+  "taxRate": 6.00,
+  "productType": "Carpet",
+  "area": 1,
+  "costPerSqFt": 2.25,
+  "materialCost": 2.25,
+  "laborCostPerSqFt": 2.10,
+  "laborCost": 2.10,
+  "tax": 0.26,
+  "total": 4.61
+}

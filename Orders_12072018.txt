@@ -1,0 +1,15 @@
+{
+  "OrderID": 7,
+  "date": "2018-12-07",
+  "customerName": "YOOOOO",
+  "state": "MI",
+  "taxRate": 5.75,
+  "productType": "Carpet",
+  "area": 1.99,
+  "costPerSqFt": 2.25,
+  "materialCost": 4.48,
+  "laborCostPerSqFt": 2.10,
+  "laborCost": 4.18,
+  "tax": 0.50,
+  "total": 9.16
+}

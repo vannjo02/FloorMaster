@@ -1,0 +1,28 @@
+2018-12-06T20:27:21.308 : initStates:  |SUCCESS
+2018-12-06T20:27:21.314 : initProducts:  |SUCCESS
+2018-12-06T20:27:21.321 : initDatabase:  |SUCCESS
+2018-12-06T20:27:21.323 : initConfig:  |SUCCESS
+2018-12-06T20:27:24.515 : saveDataToFiles:  |SUCCESS
+2018-12-06T20:47:30.940 : initStates:  |SUCCESS
+2018-12-06T20:47:30.945 : initProducts:  |SUCCESS
+2018-12-06T20:47:30.951 : initDatabase:  |SUCCESS
+2018-12-06T20:47:30.952 : initConfig:  |SUCCESS
+2018-12-06T20:48:37.103 : editOrder: Order{orderId=1, date=2018-12-04, customerName=test1, state=OH, taxRate=6.25, productType=Tile, area=5, costPerSqFt=3.50, laborCost=20.75, laborCostPerSqFt=4.15, materialCost=17.50, tax=2.39, total=40.64}{area=5, product=Tile, name=test1, state=OH} |SUCCESS
+2018-12-07T09:59:12.139 : initStates:  |SUCCESS
+2018-12-07T09:59:12.145 : initProducts:  |SUCCESS
+2018-12-07T09:59:12.153 : initDatabase:  |SUCCESS
+2018-12-07T09:59:12.155 : initConfig:  |SUCCESS
+2018-12-07T10:22:32.687 : initStates:  |SUCCESS
+2018-12-07T10:22:32.693 : initProducts:  |SUCCESS
+2018-12-07T10:22:32.701 : initDatabase:  |SUCCESS
+2018-12-07T10:22:32.702 : initConfig:  |SUCCESS
+2018-12-07T10:25:21.946 : editOrder: Order{orderId=7, date=2018-12-07, customerName=testedit, state=IN, taxRate=6.00, productType=Tile, area=1.22, costPerSqFt=3.50, laborCost=5.06, laborCostPerSqFt=4.15, materialCost=4.27, tax=0.56, total=9.89}{area=1.22, product=Tile, name=testedit, state=IN} |SUCCESS
+2018-12-07T10:25:26.760 : saveDataToFiles:  |SUCCESS
+2018-12-07T10:25:52.192 : editOrder: Order{orderId=7, date=2018-12-07, customerName=testedit, state=IN, taxRate=6.00, productType=Tile, area=1.22, costPerSqFt=3.50, laborCost=5.06, laborCostPerSqFt=4.15, materialCost=4.27, tax=0.56, total=9.89}{area=, product=Lam, name=testAgain, state=PA} |ERROR: We don't carry that product!
+2018-12-07T10:26:03.121 : saveDataToFiles:  |SUCCESS
+2018-12-07T10:26:28.866 : editOrder: Order{orderId=7, date=2018-12-07, customerName=testedit, state=IN, taxRate=6.00, productType=Wood, area=1.22, costPerSqFt=5.15, laborCost=5.80, laborCostPerSqFt=4.75, materialCost=6.28, tax=0.72, total=12.80}{area=1.22, product=Wood, name=testedit, state=IN} |SUCCESS
+2018-12-07T10:26:34.581 : saveDataToFiles:  |SUCCESS
+2018-12-07T10:27:28.782 : editOrder: Order{orderId=7, date=2018-12-07, customerName=testedit, state=IN, taxRate=6.00, productType=Laminate, area=0, costPerSqFt=1.75, laborCost=0.00, laborCostPerSqFt=2.10, materialCost=0.00, tax=0.00, total=0.00}{area=0, product=Laminate, name=testedit, state=IN} |SUCCESS
+2018-12-07T10:27:32.093 : saveDataToFiles:  |SUCCESS
+2018-12-07T10:28:20.932 : editOrder: Order{orderId=7, date=2018-12-07, customerName=YOOOOO, state=MI, taxRate=5.75, productType=Carpet, area=1.99, costPerSqFt=2.25, laborCost=4.18, laborCostPerSqFt=2.10, materialCost=4.48, tax=0.50, total=9.16}{area=1.99, product=Carpet, name=YOOOOO, state=MI} |SUCCESS
+2018-12-07T10:28:23.549 : saveDataToFiles:  |SUCCESS

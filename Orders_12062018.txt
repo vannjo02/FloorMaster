@@ -1,0 +1,30 @@
+{
+  "OrderID": 5,
+  "date": "2018-12-06",
+  "customerName": "test5",
+  "state": "OH",
+  "taxRate": 6.25,
+  "productType": "Tile",
+  "area": 6.25,
+  "costPerSqFt": 3.50,
+  "materialCost": 21.88,
+  "laborCostPerSqFt": 4.15,
+  "laborCost": 25.94,
+  "tax": 2.99,
+  "total": 50.81
+}
+{
+  "OrderID": 6,
+  "date": "2018-12-06",
+  "customerName": "test6",
+  "state": "PA",
+  "taxRate": 6.75,
+  "productType": "Wood",
+  "area": 10,
+  "costPerSqFt": 5.15,
+  "materialCost": 51.50,
+  "laborCostPerSqFt": 4.75,
+  "laborCost": 47.50,
+  "tax": 6.68,
+  "total": 105.68
+}

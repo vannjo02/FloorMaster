@@ -1,0 +1,7 @@
+{"orderId":1,"date":"2018-12-04","customerName":"test1","state":"OH","productType":"Tile","area":"5"}
+{"orderId":2,"date":"2018-12-04","customerName":"test2","state":"PA","productType":"Wood","area":"3.5"}
+{"orderId":3,"date":"2018-12-05","customerName":"test3","state":"MI","productType":"Laminate","area":"2.5"}
+{"orderId":4,"date":"2018-12-05","customerName":"test4","state":"IN","productType":"Carpet","area":"1"}
+{"orderId":5,"date":"2018-12-06","customerName":"test5","state":"OH","productType":"Tile","area":"6.25"}
+{"orderId":6,"date":"2018-12-06","customerName":"test6","state":"PA","productType":"Wood","area":"10"}
+{"orderId":7,"date":"2018-12-07","customerName":"YOOOOO","state":"MI","productType":"Carpet","area":"1.99"}

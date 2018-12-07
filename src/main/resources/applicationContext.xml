@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/mvc
+          http://www.springframework.org/schema/mvc/spring-mvc.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/aop  
+          http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+    <!-- Bean definitions go here -->
+    <bean id="userIO" class="com.sg.floormaster.ui.UserIOConsoleImpl"/>
+    
+    <bean id="view" class="com.sg.floormaster.ui.FloorMasterView">
+        <constructor-arg ref="userIO"/>
+    </bean>
+    
+    <bean id="floorMasterDao" class="com.sg.floormaster.dao.FloorMasterDaoFileImpl">
+        <constructor-arg value="ordersDB.txt"/>
+    </bean>
+    
+    <bean id="statesDao" class="com.sg.floormaster.dao.FloorMasterStatesDao"/>
+    
+    <bean id="productsDao" class="com.sg.floormaster.dao.FloorMasterProductsDao"/>
+    
+    <bean id="configDao" class="com.sg.floormaster.dao.FloorMasterConfigDao"/>
+    
+    <bean id="auditDao" class="com.sg.floormaster.dao.FloorMasterAuditDaoFileImpl"/>
+    
+    <bean id="serviceLayer" class="com.sg.floormaster.service.FloorMasterServiceLayerImpl">
+        <constructor-arg ref="floorMasterDao"/>
+        <constructor-arg ref="statesDao"/>
+        <constructor-arg ref="productsDao"/>
+        <constructor-arg ref="configDao"/>
+    </bean>
+    
+    <bean id="controller" class="com.sg.floormaster.controller.FloorMasterController">
+        <constructor-arg ref="serviceLayer"/>
+        <constructor-arg ref="view"/>
+    </bean>
+    
+    <bean id="loggingAdvice" class="com.sg.floormaster.advice.LoggingAdvice">
+        <constructor-arg ref="auditDao"/>
+    </bean>
+    
+    <aop:config>
+        <aop:aspect ref="loggingAdvice">
+            <aop:pointcut id="add" expression="execution(* com.sg.floormaster.service.FloorMasterServiceLayer.addOrder(..))"/>
+            <aop:pointcut id="edit" expression="execution(* com.sg.floormaster.service.FloorMasterServiceLayer.editOrder(..))"/>
+            <aop:pointcut id="remove" expression="execution(* com.sg.floormaster.service.FloorMasterServiceLayer.removeOrder(..))"/>
+            <aop:pointcut id="initDatabase" expression="execution(* com.sg.floormaster.service.FloorMasterServiceLayer.initDatabase(..))"/>
+            <aop:pointcut id="initStates" expression="execution(* com.sg.floormaster.service.FloorMasterServiceLayer.initStates(..))"/>
+            <aop:pointcut id="initProducts" expression="execution(* com.sg.floormaster.service.FloorMasterServiceLayer.initProducts(..))"/>
+            <aop:pointcut id="initConfig" expression="execution(* com.sg.floormaster.service.FloorMasterServiceLayer.initConfig(..))"/>
+            <aop:pointcut id="saveWork" expression="execution(* com.sg.floormaster.service.FloorMasterServiceLayer.saveDataToFiles(..))"/>
+            <aop:after-returning
+                pointcut-ref="add" 
+                method="createAuditEntry"
+            />
+            <aop:after-throwing
+                pointcut-ref="add" 
+                arg-names="jp, ex"
+                throwing="ex"
+                method="createErrorEntry"
+            />
+            <aop:after-returning
+                pointcut-ref="edit" 
+                method="createAuditEntry"
+            />
+            <aop:after-throwing
+                pointcut-ref="edit" 
+                arg-names="jp, ex"
+                throwing="ex"
+                method="createErrorEntry"
+            />
+            <aop:after-returning
+                pointcut-ref="remove" 
+                method="createAuditEntry"
+            />
+            <aop:after-throwing
+                pointcut-ref="remove" 
+                arg-names="jp, ex"
+                throwing="ex"
+                method="createErrorEntry"
+            />
+            <aop:after-returning
+                pointcut-ref="initDatabase" 
+                method="createAuditEntry"
+            />
+            <aop:after-throwing
+                pointcut-ref="initDatabase" 
+                arg-names="jp, ex"
+                throwing="ex"
+                method="createErrorEntry"
+            />
+            
+            <aop:after-returning
+                pointcut-ref="initStates" 
+                method="createAuditEntry"
+            />
+            <aop:after-throwing
+                pointcut-ref="initStates" 
+                arg-names="jp, ex"
+                throwing="ex"
+                method="createErrorEntry"
+            />
+            
+            <aop:after-returning
+                pointcut-ref="initProducts" 
+                method="createAuditEntry"
+            />
+            <aop:after-throwing
+                pointcut-ref="initProducts" 
+                arg-names="jp, ex"
+                throwing="ex"
+                method="createErrorEntry"
+            />
+            
+            <aop:after-returning
+                pointcut-ref="initConfig" 
+                method="createAuditEntry"
+            />
+            <aop:after-throwing
+                pointcut-ref="initConfig" 
+                arg-names="jp, ex"
+                throwing="ex"
+                method="createErrorEntry"
+            />
+            <aop:after-returning
+                pointcut-ref="saveWork" 
+                method="createAuditEntry"
+            />
+            <aop:after-throwing
+                pointcut-ref="saveWork" 
+                arg-names="jp, ex"
+                throwing="ex"
+                method="createErrorEntry"
+            />
+        </aop:aspect>
+    </aop:config>
+   
+</beans>
